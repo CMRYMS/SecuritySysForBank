@@ -3,7 +3,8 @@ userandpass={"maryam":"m1",
              "salma":"s3", 
              "zainab":"z4", 
              "salem":"s5", 
-             "abdullah":"a6"
+             "abdullah":"a6",
+             "saif":"s7"
              }
 
 userandphoneno={"maryam":"9153 0283", 
@@ -11,7 +12,8 @@ userandphoneno={"maryam":"9153 0283",
                 "salma":"9824 8353", 
                 "zainab":"9739 0193", 
                 "salem":"9039 3953", 
-                "abdullah":"9835 7483"
+                "abdullah":"9835 7483",
+                "saif":"9729 7923"
                 }
 
 verificationcodes=["a", "b", "c", "d"]
