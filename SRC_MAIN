@@ -1,0 +1,58 @@
+userandpass={"maryam":"m1", 
+             "mohammed":"m2", 
+             "salma":"s3", 
+             "zainab":"z4", 
+             "salem":"s5", 
+             "abdullah":"a6"
+             }
+
+userandphoneno={"maryam":"9153 0283", 
+                "mohammed":"9614 9073",
+                "salma":"9824 8353", 
+                "zainab":"9739 0193", 
+                "salem":"9039 3953", 
+                "abdullah":"9835 7483"
+                }
+
+verificationcodes=["a", "b", "c", "d"]
+
+def login():
+    forgotpass=" "
+    newpass=" "
+    for username, password in userandpass.items():
+        print(" --Bank Login System--")
+        username=input("enter username: ")
+        if username in userandpass:
+            password=input("enter password: ")
+            if password == userandpass[username]:
+                print(f"access granted, welcome {username}!")
+                break
+            else: 
+                print("password entered is incorrect. forgot password?")
+                forgotpass=input()
+                for user, phoneno in userandphoneno.items():
+                    if forgotpass=="Y":
+                        user=input("please enter username: ")
+                        if username in userandpass:
+                            if user in userandphoneno:
+                                print(f"please check your associated phone number {phoneno} for verification code")
+                                code=input("Enter verification code: ")
+                                if code in verificationcodes:
+                                    print("verification complete!")
+                                    newpass=input("please enter new password: ")
+                                    print(f"password reset complete! the new password for username {username} is {newpass}")
+                                    break
+                                elif code != verificationcodes:
+                                    print("verification failed - account locked")
+                                    break
+                                    
+                            else: 
+                                print(f"username {user} not registered in system, please enter a valid username")
+                    elif forgotpass=="N":
+                        print("exiting system..")
+                        break
+        else: 
+            print(f"username {username} not registered in system, please enter valid username")
+        break
+
+print(login())
